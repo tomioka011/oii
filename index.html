@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo me descupa</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffc0cb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #e6005c;
+        }
+
+        #formDeclaracao {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        button {
+            background-color: #e6005c;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #mensagem {
+            display: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        #surpresa {
+            font-size: 1.5em;
+            color: #ff69b4;
+            animation: aparecer 2s ease-out;
+        }
+
+        @keyframes aparecer {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Declare-se com Amor</h1>
+
+    <div id="surpresa">❤️ Surpresa Fofa ❤️</div>
+    
+    <form id="formDeclaracao">
+        <label for="declaracao">Escreva uma mensagem especial para sua amada:</label>
+        <br>
+        <textarea id="declaracao" rows="4" required></textarea>
+        <br>
+        <button type="button" onclick="mostrarMensagem()">Enviar Declaração</button>
+    </form>
+
+    <div id="mensagem">
+        <p id="mensagemTexto"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var mensagemElemento = document.getElementById("mensagemTexto");
+
+            // Substitua a mensagem abaixo pela sua declaração escolhida
+            var mensagemPersonalizada = `Seu sorriso ilumina até mesmo os dias mais nublados. Quero ser a razão do seu sorriso todos os dias.`;
+
+            mensagemElemento.innerHTML = `${mensagemPersonalizada}`;
+            document.getElementById("formDeclaracao").style.display = "none";
+            document.getElementById("mensagem").style.display = "block";
+        });
+    </script>
+</body>
+</html>
